@@ -1,0 +1,16 @@
+.form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.lk {
+    margin-left: 1%;
+}
