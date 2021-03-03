@@ -3,7 +3,7 @@
 // DB settingsa
 $host = "localhost";
 $dbname = "secretinfodb";
-$username = "Danil";
+$username = "Kira";
 $password = "7915";
 
 $dbConnection = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
