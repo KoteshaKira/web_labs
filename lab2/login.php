@@ -1,5 +1,7 @@
 <?php
 
+//Аккаунты с помощью которых можно авторизироваться
+
 $accounts = [
 
     0 => [
@@ -41,14 +43,16 @@ $accounts = [
 </body>
 
 <?php
+    
+// Попытка авторизации
 
-if(isset($_POST['submit'])){
-    if(isset($_POST['login']) && $_POST['password']){
-        for($i=0;$i<count($accounts);$i++){
-            if($_POST['login'] == $accounts[$i]['login']){
-                if($_POST['password'] == $accounts[$i]['password']){
-                    setcookie('access', true);
-                    header("Location: http://www.localhost:8090/lk.php");
+if(isset($_POST['submit'])){ 
+    if(isset($_POST['login']) && $_POST['password']){ 
+        for($i=0;$i<count($accounts);$i++){     // Пробегаемся по аккаунтам         
+            if($_POST['login'] == $accounts[$i]['login']){  // И ищем совпадения
+                if($_POST['password'] == $accounts[$i]['password']){ // Если они найдены
+                    setcookie('access', true); // Устанавливаем параметр доступа в правду
+                    header("Location: http://www.localhost:8090/lk.php"); // И перенаправляем на личный кабинет
                     die();
                 }else{
                     echo 'Неверный пароль!';
