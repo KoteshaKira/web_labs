@@ -3,8 +3,8 @@
 $config = require 'db.php';
 
 $db= new PDO('mysql:host='.$config['host'].';dbname='.$config['dbname'], $config['username'], $config['password']);
-
-$result = $db->query("SELECT * FROM Journals")->fetchAll();
+//index.php выводим все журналы
+$result = $db->query("SELECT * FROM Journals")->fetchAll(); // делаем запрос и получаем все журналы
 ?>
 <head>
     <link rel="stylesheet" href="styles/main.css">
@@ -21,6 +21,6 @@ $i = 1;
 echo '<h2> Все журналы </h2>';
 echo '<div class="list"><ul class="list-group list-group-flush w-25">';
 foreach ($result as $journal){
-    echo '<li class="list-group-item">'. $i++ . '. ' . $journal["JournalName"] .'</li>';
+    echo '<li class="list-group-item">'. $i++ . '. ' . $journal["JournalName"] .'</li>'; // отрисовываем все жерналы по очереди
 }
 echo '</ul></div></div>';
