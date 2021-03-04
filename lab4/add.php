@@ -3,6 +3,9 @@
 $config = require 'db.php';
 $db = new PDO('mysql:host='.$config['host'].';dbname='.$config['dbname'], $config['username'], $config['password']);
 
+//форма для добавление нового журнала
+//при добавлении INSERT в бд и редирект на index.php
+
 if(isset($_POST['add'])){
     $str = htmlspecialchars($_POST['journalName']);
     $db->query("INSERT INTO Journals (JournalName) VALUES ('$str')");
